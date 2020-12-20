@@ -1,0 +1,22 @@
+# [START django_app]
+runtime: python38
+
+handlers:
+  - url: /
+    static_files: frontend/build/index.html
+    upload: frontend/build/index.html
+    expiration: 1s
+    
+  - url: /api/.*
+    script: auto
+
+  - url: /static
+    static_dir: frontend/build/static
+    expiration: 1s
+
+  - url: /(.*\.(json|ico|js))$
+    static_files: frontend/build/\1
+    upload: frontend/build/.*\.(json|ico|js)$
+    expiration: 1s
+
+# [END django_app]
