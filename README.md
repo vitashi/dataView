@@ -8,3 +8,5 @@
 - ReactJs
 - Django==3.1.4
 - Mysql
+
+# a lot of things to do here!
